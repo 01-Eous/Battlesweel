@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddm5grneva1ny"]
+
+[ext_resource type="Texture2D" uid="uid://dhsti0oiif08" path="res://assets/Normal_Swell.png" id="1_rhtdj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rhtdj"]
+radius = 81.0
+
+[node name="Normal_Sweel" type="RigidBody2D"]
+
+[node name="Texture" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_rhtdj")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rhtdj")

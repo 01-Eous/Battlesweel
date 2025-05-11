@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck5aj3xsf7et4"]
+
+[ext_resource type="Texture2D" uid="uid://bi00rmkgr6hc3" path="res://assets/Wall.png" id="1_5rve1"]
+[ext_resource type="PhysicsMaterial" uid="uid://wh6afsd7faol" path="res://textures/physics/Wall.tres" id="2_d5hba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8ja4"]
+size = Vector2(1920, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5hba"]
+size = Vector2(100, 1080)
+
+[node name="Battlefield" type="Node2D"]
+
+[node name="Wall_1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Wall_1"]
+position = Vector2(960, 50)
+shape = SubResource("RectangleShape2D_v8ja4")
+
+[node name="Wall" type="Sprite2D" parent="Wall_1"]
+position = Vector2(960, 50)
+scale = Vector2(19.2, 1)
+texture = ExtResource("1_5rve1")
+
+[node name="Wall_2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_2"]
+position = Vector2(50, 540)
+shape = SubResource("RectangleShape2D_d5hba")
+
+[node name="Wall" type="Sprite2D" parent="Wall_2"]
+position = Vector2(50, 540)
+scale = Vector2(1, 10.8)
+texture = ExtResource("1_5rve1")
+
+[node name="Wall_3" type="StaticBody2D" parent="."]
+position = Vector2(0, 980)
+physics_material_override = ExtResource("2_d5hba")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Wall_3"]
+position = Vector2(960, 50)
+shape = SubResource("RectangleShape2D_v8ja4")
+
+[node name="Wall" type="Sprite2D" parent="Wall_3"]
+position = Vector2(960, 50)
+scale = Vector2(19.2, 1)
+texture = ExtResource("1_5rve1")
+
+[node name="Wall_4" type="StaticBody2D" parent="."]
+position = Vector2(1820, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_4"]
+position = Vector2(50, 540)
+shape = SubResource("RectangleShape2D_d5hba")
+
+[node name="Wall" type="Sprite2D" parent="Wall_4"]
+position = Vector2(50, 540)
+scale = Vector2(1, 10.8)
+texture = ExtResource("1_5rve1")
