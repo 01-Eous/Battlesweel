@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddm5grneva1ny"]
+[gd_scene load_steps=5 format=3 uid="uid://ddm5grneva1ny"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://bembmr50qdp1g" path="res://textures/physics/Sweel.tres" id="1_8mua0"]
 [ext_resource type="Texture2D" uid="uid://dhsti0oiif08" path="res://assets/Normal_Swell.png" id="1_rhtdj"]
+[ext_resource type="Script" uid="uid://c24x5f6noley8" path="res://scripts/NormalSweel.cs" id="2_26oxi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rhtdj"]
 radius = 81.0
 
 [node name="Normal_Sweel" type="RigidBody2D"]
+physics_material_override = ExtResource("1_8mua0")
+gravity_scale = 0.0
+script = ExtResource("2_26oxi")
+speedDeltaPerSecond = 1000.0
+metadata/_edit_group_ = true
 
 [node name="Texture" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -13,3 +20,7 @@ texture = ExtResource("1_rhtdj")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rhtdj")
+metadata/_edit_group_ = true
+
+[connection signal="mouse_entered" from="." to="." method="GoInShape"]
+[connection signal="mouse_exited" from="." to="." method="GoOutShape"]
